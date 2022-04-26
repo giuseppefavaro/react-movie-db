@@ -1,22 +1,22 @@
 import "./style.css";
 
-const CardItem = ({ cardListItems }) => {
+const CardItem = ({ cardData  }) => {
     return (
         <div className="CardItem">
-          <a href="a">
-            <h2>Titolo</h2>
-          </a>
-          <p>2006</p>
-          <img src="a" alt="prova" />
-          <p></p>
-          <div className="genre">
-            <ul>
-                <li>Primo elemento</li>
-                <li>Primo elemento</li>
-                <li>Primo elemento</li>
-            </ul>
-          </div>
-        </div>
+            <a href="a">
+            <h2>{cardData.title}</h2>
+            </a>
+            <p>{cardData.year}</p>
+            <img src={cardData.poster} alt={cardData.title} />
+            <p>{cardData.description}</p>
+            <div className="genre">
+                <ul>
+                    {cardData.genres.map((genre, index) => (
+                    <li key={index}>{genre}</li>
+                    ))}
+                </ul>
+            </div>
+      </div>
       );
 }
 
