@@ -4,11 +4,11 @@ import CardItem from "../CardItem";
 import "./style.css";
 
 
-import {getData} from "../../utils";
+import {GET} from "../../utils";
 
 
 
-// getData().then((resultData) => console.log(resultData) );
+// GET().then((resultData) => console.log(resultData) );
 
 
 const CardList = () => {
@@ -18,9 +18,9 @@ const CardList = () => {
 
     useEffect(() => {
 
-         // getData().then((resultData) => setMoviesData(resultData) ) 
+         // GET().then((resultData) => setMoviesData(resultData) ) 
 
-         getData().then( (resultData) => setMoviesData(resultData) ) 
+         GET().then( (resultData) => setMoviesData(resultData) ) 
 
         } , []);
 
