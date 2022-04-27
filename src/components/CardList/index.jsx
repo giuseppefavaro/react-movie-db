@@ -27,7 +27,7 @@ const CardList = () => {
 
 
 
-     console.log(moviesData);
+    // console.log(moviesData);
 
     
     return (

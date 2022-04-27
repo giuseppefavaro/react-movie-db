@@ -4,4 +4,4 @@ const getData = async () => {
     return data;
 }
 
-export {getData};
+export { getData};

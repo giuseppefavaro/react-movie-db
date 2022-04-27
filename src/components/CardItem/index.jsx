@@ -11,7 +11,8 @@ const CardItem = ({ cardData  }) => {
             <p>{cardData.description}</p>
             <div className="genre">
                 <ul>
-                    {cardData.genres.map((genre, index) => (
+                    {cardData.genres &&
+                    cardData.genres.map((genre, index) => (
                     <li key={index}>{genre}</li>
                     ))}
                 </ul>

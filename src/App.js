@@ -1,11 +1,14 @@
-import CardList from './components/CardList'
+import CardList from './components/CardList';
+import CreateCardForm from './components/CreateCardForm';
 
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-    <CardList />
+      <CreateCardForm />
+      <CardList />
     </div>
   );
 }
