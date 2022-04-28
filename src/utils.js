@@ -1,12 +1,11 @@
-const API_URL = "https://edgemony-backend.herokuapp.com/movies";
+const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
 
 // GET
-const GET = () => fetch(API_URL).then((res) => res.json());
-
+const GET = (id = "") => fetch(`${BASE_URL}/${id}`).then((res) => res.json());
 
 // POST
 const POST = (body) =>
-  fetch(API_URL, {
+  fetch(BASE_URL, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -14,14 +13,12 @@ const POST = (body) =>
     body: JSON.stringify(body),
   });
 
-
 // DELETE
-const DELETE = (id) => fetch(`${API_URL}/${id}`, { method: "DELETE" });
-
+const DELETE = (id) => fetch(`${BASE_URL}/${id}`, { method: "DELETE" });
 
 // PUT
 const PUT = (id, body) =>
-  fetch(`${API_URL}/${id}`, {
+  fetch(`${BASE_URL}/${id}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",

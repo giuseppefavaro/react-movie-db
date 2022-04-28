@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
 import AddMovie from './pages/AddMovie';
+import EditMovie from "./pages/EditMovie";
 
 import './App.css';
 
@@ -25,8 +26,9 @@ function App() {
 
 
         <Routes>
-            <Route path="/add-movie" element={<AddMovie />} />
-            <Route path="/" element={<Home />} />
+          <Route path="/edit-movie/:id" element={<EditMovie />} />
+          <Route path="/add-movie" element={<AddMovie />} />
+          <Route path="/" element={<Home />} />
         </Routes>
 
       </div>
