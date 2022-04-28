@@ -1,31 +1,48 @@
 import { useState, useEffect } from "react";
 import CardItem from "../CardItem";
 
-import "./style.css";
-
-
 import {GET} from "../../utils";
+
+import "./style.css";
 
 
 
 // GET().then((resultData) => console.log(resultData) );
 
 
-const CardList = () => {
+const CardList = ({filter}) => {
 
     const [moviesData, setMoviesData] = useState([]);
+    const [moviesDataFiltered, setMoviesDataFiltered] = useState([]);
 
 
     useEffect(() => {
 
-         // GET().then((resultData) => setMoviesData(resultData) ) 
+         GET().then( (resultData) => {
+            setMoviesData(resultData);
+            setMoviesDataFiltered(resultData);
+         } ) 
 
-         GET().then( (resultData) => setMoviesData(resultData) ) 
+    } , []);
 
-        } , []);
+   
+
+    useEffect(() => {
+        const filtered = moviesDataFiltered.filter((movie) => {
+
+            return ( movie.title.toLowerCase().includes(filter.toLowerCase()) ) || ( movie.genres.toString().toLowerCase().includes(filter.toLowerCase()) )
+        
+        })
+        
+        setMoviesData(filtered);
+
+    // eslint-disable-next-line
+    }, [filter]);
 
 
 
+
+    // console.log(moviesDataFiltered);
 
     // console.log(moviesData);
 
