@@ -1,0 +1,42 @@
+.Modal {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background: rgba(55, 71, 79, 0.8);
+    width: 100vw;
+    height: 100vh;
+
+
+    // .Modal__text {
+    //     border: 5px solid black;
+    // }
+
+    &__text {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    &__wrapper {
+        position: fixed;
+        z-index: 1;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        padding: 150px 50px;
+        width: 50%;
+        background: linear-gradient(280deg, rgb(39, 39, 39) 0%, rgba(72,85,99,1) 78%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: #fff;
+        border-radius: 8px;
+    }
+
+
+}
+
+
+
+
+
+
+

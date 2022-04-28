@@ -1,4 +1,5 @@
 import CardList from "../../components/CardList";
+
 import "./style.css";
 
 function Home() {

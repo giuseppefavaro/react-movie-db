@@ -1,9 +1,11 @@
 import { useState } from "react";
+
 import { POST } from "../../utils"
 
 import "./style.css";
 
-const CreateCardForm = () => {
+const CreateCardForm = ({setModalVisibility}) => {
+
 
     const [title, setTitle] = useState("");
     const [year, setYear] = useState("");
@@ -12,6 +14,9 @@ const CreateCardForm = () => {
     const [description, setDescription] = useState("");
 
     const genresInArr = (genres) => genres.split(",");
+
+
+
 
 
     const addMovie = (e) => {
@@ -24,10 +29,19 @@ const CreateCardForm = () => {
             genres: genresInArr(genres),
             description,
           });
+
+          setModalVisibility(true);
     }
 
+
+      
     return (
+        
         <div className="CreateCardForm">
+
+
+        
+
           <h2>Add new movie</h2>
     
           <form onSubmit={addMovie} className="CreateCardForm__form">
