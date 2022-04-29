@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-import { POST } from "../../utils"
+import { useLocation } from "react-router-dom";
+
+import { POST, PUT } from "../../utils"
 
 import "./style.css";
 
-const CreateCardForm = ({setModalVisibility}) => {
+const CreateCardForm = ({setModalVisibility, callType}) => {
 
 
     const [title, setTitle] = useState("");
@@ -16,21 +18,36 @@ const CreateCardForm = ({setModalVisibility}) => {
     const genresInArr = (genres) => genres.split(",");
 
 
+    const location = useLocation();
+    const movieId = location.pathname.split("/").reverse()[0];
 
 
 
     const addMovie = (e) => {
         e.preventDefault();
 
-        POST({
+        if (callType === "POST") {
+          POST({
             title,
             year,
             poster,
             genres: genresInArr(genres),
             description,
           });
-
+          
           setModalVisibility(true);
+        } else {
+          
+          PUT(movieId, {
+            title,
+            year,
+            poster,
+            genres: genresInArr(genres),
+            description,
+          });
+          
+        }
+
     }
 
 
@@ -39,9 +56,6 @@ const CreateCardForm = ({setModalVisibility}) => {
     return (
         
         <div className="CreateCardForm">
-
-
-        
 
           <h2>Add new movie</h2>
     
