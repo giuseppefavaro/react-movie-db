@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import { POST, PUT } from "../../utils"
 
-import "./style.css";
+import styles from "./styles.module.scss"
 
 const CreateCardForm = ({setModalVisibility, callType}) => {
 
@@ -55,11 +55,11 @@ const CreateCardForm = ({setModalVisibility, callType}) => {
       
     return (
         
-        <div className="CreateCardForm">
+        <div className={styles.CreateCardForm}>
 
           <h2>Add new movie</h2>
     
-          <form onSubmit={addMovie} className="CreateCardForm__form">
+          <form onSubmit={addMovie} className={styles.CreateCardForm__form}>
 
             <label htmlFor="title">Title:</label>
             <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" required />

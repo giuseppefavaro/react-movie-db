@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CardList from "../../components/CardList";
 
-import "./style.css";
+import styles from "./styles.module.scss"
 
 function Home () {
 
@@ -14,9 +14,11 @@ function Home () {
 
 
   return (
-    <div className="Home">
-      <label htmlFor="search">Search by title or categories:</label>
-      <input  value={searchValue} onChange={changing} type="text" id="search" name="search" />
+    <div className={styles.Home}>
+      <div className={styles.Home__search}>
+        <label htmlFor="search">Search by title or categories:</label>
+        <input value={searchValue} onChange={changing} type="text" id="search" name="search" placeholder="Cerca il film per titolo o categoria" />
+      </div>
 
       <CardList filter={searchValue} />
     </div>

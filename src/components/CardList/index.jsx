@@ -3,7 +3,7 @@ import CardItem from "../CardItem";
 
 import {GET} from "../../utils";
 
-import "./style.css";
+import styles from "./styles.module.scss"
 
 
 
@@ -48,11 +48,11 @@ const CardList = ({filter}) => {
 
     
     return (
-        <div className="CardList">
+        <div className={styles.CardList}>
 
             <h1>Lista dei film</h1>
 
-            <div className="CardList__wrapper">
+            <div className={styles.CardList__wrapper}>
                 {   moviesData &&
 
                     moviesData.map((movie) => (
