@@ -1,8 +1,88 @@
 .CreateCardForm {
+    padding: 20px;
+    border-radius: 5px;  
+    margin-bottom: 60px;
+    height: 100%;
 
-}
 
-
-.CreateCardForm__form {
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__form label {
+        display: block;
+        font-size: 13px;
+        padding-bottom: 5px;
+    }
+    &__form div {
+        padding: 20px;
+    }
     
+    
+    &__form__input {
+        width: 25%;
+    }
+    @media (max-width: 767px) { 
+        &__form__input { width: 100%; }
+    }
+    
+    
+
+    &__form__textarea,
+    &__form__btn {
+        width: 100%;
+    }
+    
+    
+    
+    
+    
+    
+    &__form__input input {
+        width: 100%;
+        border: 1px solid #ECEFF1;;
+        display: block;
+        background: #fff;
+        min-height: 50px;
+ 
+        padding: 15px;
+        font-size: 14px;
+        font-family: inherit;
+    }
+    
+    &__form__textarea textarea {
+        width: 100%;
+        background: #fff;
+        min-height: 100px;
+        display: block;
+        border: 1px solid #ECEFF1;;
+        resize: none;
+        padding: 15px;
+        font-size: 14px;
+        font-family: inherit;
+    }
+    
+    &__form__input input:focus,
+    &__form__textarea textarea:focus {
+        outline: none;
+    }
+    
+
+    &__form__btn input {
+        border: none;
+        height: 50px;
+        width: 100%;
+        background: #2962FF;
+        color: #fff;
+        font-size: 20px;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+        padding: 10px 30px;  
+    } 
+    &__form__btn input:hover {
+        background: #144ff2;
+        color: #fff;
+    }
 }
+
+

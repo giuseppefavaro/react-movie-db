@@ -19,11 +19,9 @@ const AddMovie = () => {
 
     return (
         <div className={styles.AddMovie}>
-            <h1>Add new movie</h1>
-
             <CreateCardForm setModalVisibility={setModalVisibility} callType="POST" />
 
-            <Modal text="Hai aggiunto un nuovo film!" isVisibile={isModalVisibile} />
+            <Modal text="Added a new movie!" isVisibile={isModalVisibile} />
         </div>
     )
 }

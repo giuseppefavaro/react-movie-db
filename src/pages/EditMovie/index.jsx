@@ -17,8 +17,12 @@ function EditMovie() {
 
   return (
     <div className={styles.EditMovie}>
-      <CardItem cardData={movieData} />
-      <CreateCardForm setModalVisibility={false} callType="PUT" />
+      <div className={styles.EditMovie__left}>
+        <CardItem cardData={movieData} />
+      </div>
+      <div className={styles.EditMovie__right}>
+        <CreateCardForm setModalVisibility={false} callType="PUT" />
+      </div>
     </div>
   );
 }

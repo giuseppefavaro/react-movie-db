@@ -14,16 +14,15 @@ const CardItem = ({ cardData  }) => {
 
     return (
         <div className={styles.CardItem}>
+
+
+            <img className={styles.CardItem__poster} src={cardData.poster} alt={cardData.title} />
             <Link to={`/edit-movie/${cardData.id}`}>
-                <h2>{cardData.title}</h2>
+                <h2 className={styles.CardItem__title}>{cardData.title}</h2>
             </Link>
-
-            <button onClick={onCardDelete} className={styles.CardItem__btn}>X</button>
-
-            <p>{cardData.year}</p>
-            <img src={cardData.poster} alt={cardData.title} />
-            <p>{cardData.description}</p>
-            <div className={styles.genre}>
+            <p className={styles.CardItem__year}>{cardData.year}</p>
+            <p className={styles.CardItem__description}>{cardData.description}</p>
+            <div className={styles.CardItem__genre}>
                 <ul>
                     { Array.isArray(cardData.genres) &&
                     cardData.genres.map((genre, index) => (
@@ -31,6 +30,7 @@ const CardItem = ({ cardData  }) => {
                     ))}
                 </ul>
             </div>
+            <button onClick={onCardDelete} className={styles.CardItem__btn}></button>
       </div>
       );
 }

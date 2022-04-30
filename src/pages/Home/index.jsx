@@ -17,7 +17,7 @@ function Home () {
     <div className={styles.Home}>
       <div className={styles.Home__search}>
         <label htmlFor="search">Search by title or categories:</label>
-        <input value={searchValue} onChange={changing} type="text" id="search" name="search" placeholder="Cerca il film per titolo o categoria" />
+        <input value={searchValue} onChange={changing} type="text" id="search" name="search" placeholder="Search movie" />
       </div>
 
       <CardList filter={searchValue} />

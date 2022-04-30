@@ -1,18 +1,20 @@
 .Home {
-    border: 1px solid red;
+    padding: 20px;
     
 
-
     &__search {
-        border: 2px solid black;
-        padding: 20px;
-
+        padding: 40px 0;
     }
 
 
     &__search input {
         width: 100%;
-        padding: 10px;
-        border: none;
+        padding: 15px 10px;
+        border: 1px solid #ECEFF1;;
+    }
+
+    &__search label {
+        display: block;
+        margin-bottom: 10px;
     }
 }

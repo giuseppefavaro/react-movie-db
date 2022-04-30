@@ -57,26 +57,34 @@ const CreateCardForm = ({setModalVisibility, callType}) => {
         
         <div className={styles.CreateCardForm}>
 
-          <h2>Add new movie</h2>
+          <h1>Add new movie</h1>
     
           <form onSubmit={addMovie} className={styles.CreateCardForm__form}>
 
-            <label htmlFor="title">Title:</label>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" required />
+            <div className={styles.CreateCardForm__form__input}>
+              <label htmlFor="title">Title:</label>
+              <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" required />
+            </div>
+            <div className={styles.CreateCardForm__form__input}>
+              <label htmlFor="year">Year:</label>
+              <input value={year} onChange={(e) => setYear(e.target.value)} type="text" id="year" name="year" required />
+            </div>
+            <div className={styles.CreateCardForm__form__input}>
+              <label htmlFor="poster">Poster:</label>
+              <input value={poster} onChange={(e) => setPoster(e.target.value)} type="text" id="poster" name="poster" required />
+            </div>
+            <div className={styles.CreateCardForm__form__input}>
+              <label htmlFor="genres">Genres:</label>
+              <input value={genres} onChange={(e) => setGenres(e.target.value)} type="text" id="genres" name="genres" required />
+            </div>
+            <div className={styles.CreateCardForm__form__textarea}>
+              <label htmlFor="description">Description:</label>
+              <textarea value={description} onChange={(e) => setDescription(e.target.value)} id="description" name="description" required></textarea>
+            </div>
+            <div className={styles.CreateCardForm__form__btn}>
+              <input type="submit" value="Add movie" />
+            </div>
 
-            <label htmlFor="year">Year:</label>
-            <input value={year} onChange={(e) => setYear(e.target.value)} type="text" id="year" name="year" required />
-
-            <label htmlFor="poster">Poster:</label>
-            <input value={poster} onChange={(e) => setPoster(e.target.value)} type="text" id="poster" name="poster" required />
-
-            <label htmlFor="genres">Genres:</label>
-            <input value={genres} onChange={(e) => setGenres(e.target.value)} type="text" id="genres" name="genres" required />
-
-            <label htmlFor="description">Description:</label>
-            <input value={description} onChange={(e) => setDescription(e.target.value)} type="text" id="description" name="description" required />
-    
-            <input type="submit" value="Add movie" />
           </form>
             {/* <button onClick={() => console.log(title, year, poster, genres, description )}>Test</button> */}
         </div>

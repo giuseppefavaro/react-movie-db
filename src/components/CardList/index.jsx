@@ -50,8 +50,6 @@ const CardList = ({filter}) => {
     return (
         <div className={styles.CardList}>
 
-            <h1>Lista dei film</h1>
-
             <div className={styles.CardList__wrapper}>
                 {   moviesData &&
 

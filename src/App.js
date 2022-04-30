@@ -13,23 +13,29 @@ function App() {
     <Router>
       <div className="App">
 
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/add-movie">Add movie</Link>
-            </li>
-          </ul>
-        </nav>
+        <header className="Header">
+          <div className="Header__logo">
+            <img src="./moviedb-logo.png" width="137" height="32" alt="moviedb" />
+          </div>
+          <nav className="Header__menu">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/add-movie">Add movie</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-
-        <Routes>
-          <Route path="/edit-movie/:id" element={<EditMovie />} />
-          <Route path="/add-movie" element={<AddMovie />} />
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <main className="Page">
+          <Routes>
+            <Route path="/edit-movie/:id" element={<EditMovie />} />
+            <Route path="/add-movie" element={<AddMovie />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
 
       </div>
     </Router>
