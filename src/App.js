@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
 import AddMovie from './pages/AddMovie';
@@ -22,7 +22,7 @@ function App() {
   const editSuccess = (value) => {
     setAlert(value);
   };
-  
+
 
     const hideAlert = () => {
       setAlert ({
