@@ -6,7 +6,11 @@ import { POST, PUT } from "../../utils"
 
 import styles from "./styles.module.scss"
 
-const CreateCardForm = ({setModalVisibility, callType}) => {
+
+
+
+const CreateCardForm = ({setModalVisibility, callType, completeCallback}) => {
+
 
 
     const [title, setTitle] = useState("");
@@ -23,11 +27,11 @@ const CreateCardForm = ({setModalVisibility, callType}) => {
 
 
 
-    const addMovie = (e) => {
+    const addMovie = async (e) => {
         e.preventDefault();
 
         if (callType === "POST") {
-          POST({
+          await POST({
             title,
             year,
             poster,
@@ -36,15 +40,23 @@ const CreateCardForm = ({setModalVisibility, callType}) => {
           });
           
           setModalVisibility(true);
+
+          completeCallback();
+
+
         } else {
           
-          PUT(movieId, {
+         await PUT(movieId, {
             title,
             year,
             poster,
             genres: genresInArr(genres),
             description,
           });
+
+
+          completeCallback();
+
           
         }
 
@@ -56,8 +68,6 @@ const CreateCardForm = ({setModalVisibility, callType}) => {
     return (
         
         <div className={styles.CreateCardForm}>
-
-          <h1>Add new movie</h1>
     
           <form onSubmit={addMovie} className={styles.CreateCardForm__form}>
 

@@ -1,0 +1,19 @@
+.Alert {
+    background: #2962FF;
+    font-weight: 900;
+    color: #fff;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+}
+
+
+.Alert p {
+    padding: 20px;
+}
+
+
+.visible {
+    height: 60px;
+}
+
