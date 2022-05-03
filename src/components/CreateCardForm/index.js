@@ -9,7 +9,7 @@ import styles from "./styles.module.scss"
 
 
 
-const CreateCardForm = ({setModalVisibility, callType, completeCallback}) => {
+const CreateCardForm = ({setModalVisibility, callType, completeCallback, text}) => {
 
 
 
@@ -68,6 +68,8 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback}) => {
     return (
         
         <div className={styles.CreateCardForm}>
+
+        <h1>{text}</h1>
     
           <form onSubmit={addMovie} className={styles.CreateCardForm__form}>
 
@@ -92,7 +94,7 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback}) => {
               <textarea value={description} onChange={(e) => setDescription(e.target.value)} id="description" name="description" required></textarea>
             </div>
             <div className={styles.CreateCardForm__form__btn}>
-              <input type="submit" value="Add movie" />
+              <input type="submit" value={text} />
             </div>
 
           </form>

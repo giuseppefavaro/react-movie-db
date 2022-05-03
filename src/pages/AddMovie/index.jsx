@@ -40,8 +40,7 @@ const AddMovie = (props) => {
 
     return (
         <div className={styles.AddMovie}>
-            <h1>Add new movie</h1>
-            <CreateCardForm completeCallback={submitComplete} setModalVisibility={setModalVisibility} callType="POST" />
+            <CreateCardForm completeCallback={submitComplete} setModalVisibility={setModalVisibility} callType="POST" text="Add new movie" />
 
             <Modal text="Added a new movie!" isVisibile={isModalVisibile} />
         </div>

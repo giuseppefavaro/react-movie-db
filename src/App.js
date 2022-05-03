@@ -39,7 +39,7 @@ function App() {
 
         <header className="Header">
           <div className="Header__logo">
-            <img src={process.env.PUBLIC_URL + '/moviedb-logo.png'} width="137" height="32" alt="moviedb" />
+          <Link to="/"><img src={process.env.PUBLIC_URL + '/moviedb-logo.png'} width="137" height="32" alt="moviedb" /></Link>
           </div>
           <nav className="Header__menu">
             <ul>

@@ -41,8 +41,7 @@ function EditMovie(props) {
         <CardItem cardData={movieData} />
       </div>
       <div className={styles.EditMovie__right}>
-        <h1>Edit movie</h1>
-        <CreateCardForm completeCallback={submitComplete} setModalVisibility={false} callType="PUT" />
+        <CreateCardForm completeCallback={submitComplete} setModalVisibility={false} callType="PUT" text="Edit movie" />
       </div>
     </div>
   );
