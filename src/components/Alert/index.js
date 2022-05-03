@@ -6,7 +6,8 @@ const Alert = (props) => {
     const visible = props.visible || false;
     const content = props.content || "";
     const timeout = props.timeout || 3000;
-    // const color = props.color || "";
+    const color = props.color || "";
+
 
 
     useEffect(() => {
@@ -17,11 +18,12 @@ const Alert = (props) => {
     },[visible])
 
 
-    const classes = [styles.Alert];
-
-    if (visible) {
-        classes.push(styles.visible)
-    }
+    const classes = [
+        styles.Alert,
+        visible ? styles.visible : "",
+        color === "alertColorBlue" ? styles.alertColorBlue : "",
+        color === "alertColorGreen" ? styles.alertColorGreen : ""
+    ]
 
     return (
         <div className={classes.join(" ")}>

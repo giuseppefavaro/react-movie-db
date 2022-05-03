@@ -53,7 +53,7 @@ function App() {
           </nav>
         </header>
 
-        <Alert content={alert.content} visible={alert.visible} color={alert.color} timeoutCallback={hideAlert} timeout="3000" />
+        <Alert content={alert.content} visible={alert.visible} color={alert.color} timeoutCallback={hideAlert} timeout="4000" />
 
         <main className="Page">
           <Routes>

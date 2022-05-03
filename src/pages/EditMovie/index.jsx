@@ -27,7 +27,7 @@ function EditMovie(props) {
     props.editSuccess({
       visible: true,
       content: "You have successfully edited the movie",
-      color: "green",
+      color: "alertColorGreen",
     })
   
     navigate("/");

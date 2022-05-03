@@ -22,7 +22,7 @@ const AddMovie = (props) => {
         props.editSuccess({
             visible: true,
             content: "You have added a new movie!",
-            color: "blue",
+            color: "alertColorBlue",
         })
         
         navigate("/");
