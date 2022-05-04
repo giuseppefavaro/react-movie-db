@@ -18,7 +18,7 @@ function EditMovie(props) {
 
   useEffect(() => {
     GET(movieId).then((data) => setMovieData(data));
-  }, []);
+  }, [movieId]);
 
 
   const submitComplete = () => {
