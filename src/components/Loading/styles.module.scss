@@ -1,0 +1,27 @@
+.Loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__circle {
+        border: 16px solid #e4e8eb;
+        border-radius: 50%;
+        border-top: 16px solid #1bf5c1;
+        width: 150px;
+        height: 150px;
+        animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+}
+
+

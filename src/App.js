@@ -1,14 +1,16 @@
 import React from "react";
+import { Suspense, lazy } from "react";
 import { useState } from "react";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Home from "./pages/Home";
-import AddMovie from './pages/AddMovie';
-import EditMovie from "./pages/EditMovie";
-
 import Alert from "./components/Alert"
+import Loading from "./components/Loading";
 
 import './App.css';
+
+const Home = lazy(() => import(/* webpackChunkName: "home" */ "./pages/Home"));
+const AddMovie = lazy(() => import(/* webpackChunkName: "add" */ "./pages/AddMovie"));
+const EditMovie = lazy(() => import(/* webpackChunkName: "edit" */ "./pages/EditMovie"));
 
 
 function App() {
@@ -57,9 +59,34 @@ function App() {
 
         <main className="Page">
           <Routes>
-            <Route path="/edit-movie/:id" element={<EditMovie editSuccess={editSuccess} />} />
-            <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess} />} />
-            <Route path="/" element={<Home />} />
+
+            <Route
+              path="/edit-movie/:id"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <EditMovie editSuccess={editSuccess} />
+                </Suspense>
+              }
+            />
+              
+            <Route
+              path="/add-movie"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AddMovie editSuccess={editSuccess} />
+                </Suspense>
+              }
+            />
+
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Home />
+                </Suspense>
+              }
+            />
+          
           </Routes>
         </main>
 
