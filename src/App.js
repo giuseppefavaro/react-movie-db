@@ -1,10 +1,10 @@
-import React from "react";
-import { Suspense, lazy } from "react";
-import { useState } from "react";
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Suspense, lazy, React, useState } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-import Alert from "./components/Alert"
+import Header from "./components/Header";
+import Alert from "./components/Alert";
 import Loading from "./components/Loading";
+
 
 import './App.css';
 
@@ -26,71 +26,53 @@ function App() {
   };
 
 
-    const hideAlert = () => {
-      setAlert ({
-        visible: false,
-        content: "",
-        color: ""
+  const hideAlert = () => {
+    setAlert ({
+      visible: false,
+      content: "",
+      color: ""
     })
-    }
+  }
 
 
   return (
     <Router>
-      <div className="App">
 
-        <header className="Header">
-          <div className="Header__logo">
-          <Link to="/"><img src={process.env.PUBLIC_URL + '/moviedb-logo.png'} width="137" height="32" alt="moviedb" /></Link>
-          </div>
-          <nav className="Header__menu">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/add-movie">Add movie</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
 
         <Alert content={alert.content} visible={alert.visible} color={alert.color} timeoutCallback={hideAlert} timeout="4000" />
 
-        <main className="Page">
-          <Routes>
+        <Routes>
 
-            <Route
-              path="/edit-movie/:id"
-              element={
-                <Suspense fallback={<Loading />}>
-                  <EditMovie editSuccess={editSuccess} />
-                </Suspense>
-              }
-            />
-              
-            <Route
-              path="/add-movie"
-              element={
-                <Suspense fallback={<Loading />}>
-                  <AddMovie editSuccess={editSuccess} />
-                </Suspense>
-              }
-            />
+          <Route
+            path="/edit-movie/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <EditMovie editSuccess={editSuccess} />
+              </Suspense>
+            }
+          />
+            
+          <Route
+            path="/add-movie"
+            element={
+              <Suspense fallback={<Loading />}>
+                <AddMovie editSuccess={editSuccess} />
+              </Suspense>
+            }
+          />
 
-            <Route
-              path="/"
-              element={
-                <Suspense fallback={<Loading />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-          
-          </Routes>
-        </main>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Home />
+              </Suspense>
+            }
+          />
+        
+        </Routes>
 
-      </div>
     </Router>
   );
 }

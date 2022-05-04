@@ -22,7 +22,7 @@ function EditMovie(props) {
 
 
   const submitComplete = () => {
-    console.log("ok modificato ");
+    // console.log("ok modificato ");
 
     props.editSuccess({
       visible: true,
@@ -38,10 +38,10 @@ function EditMovie(props) {
   return (
     <div className={styles.EditMovie}>
       <div className={styles.EditMovie__left}>
-        <CardItem cardData={movieData} />
+        <CardItem cardData={movieData} btnDeleteVisibility={false} />
       </div>
       <div className={styles.EditMovie__right}>
-        <CreateCardForm completeCallback={submitComplete} setModalVisibility={false} callType="PUT" text="Edit movie" />
+        <CreateCardForm completeCallback={submitComplete} btnDeleteVisibility={false} text="Edit movie" />
       </div>
     </div>
   );

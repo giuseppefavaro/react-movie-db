@@ -5,7 +5,7 @@ import { DELETE } from "../../utils";
 import styles from "./styles.module.scss";
 
 
-const CardItem = ({ cardData  }) => {
+const CardItem = ({ cardData, btnDeleteVisibility  }) => {
 
 
     const onCardDelete = () => {
@@ -13,9 +13,8 @@ const CardItem = ({ cardData  }) => {
     }
 
     return (
-        <div className={styles.CardItem}>
-
-
+        
+        <article className={styles.CardItem}>
             <img className={styles.CardItem__poster} src={cardData.poster} alt={cardData.title} />
             <Link to={`/edit-movie/${cardData.id}`}>
                 <h2 className={styles.CardItem__title}>{cardData.title}</h2>
@@ -29,9 +28,10 @@ const CardItem = ({ cardData  }) => {
                     <li key={index}>{genre}</li>
                     ))}
                 </ul>
+
+                { btnDeleteVisibility && <button onClick={onCardDelete} className={styles.CardItem__btn}></button>}
             </div>
-            <button onClick={onCardDelete} className={styles.CardItem__btn}></button>
-      </div>
+        </article>
       );
 }
 

@@ -67,7 +67,7 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback, text}) 
       
     return (
         
-        <div className={styles.CreateCardForm}>
+        <main className={styles.CreateCardForm}>
 
         <h1>{text}</h1>
     
@@ -99,7 +99,8 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback, text}) 
 
           </form>
             {/* <button onClick={() => console.log(title, year, poster, genres, description )}>Test</button> */}
-        </div>
+            
+        </main>
       );
 }
 

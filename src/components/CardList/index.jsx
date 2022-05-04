@@ -49,17 +49,16 @@ const CardList = ({filter}) => {
     
     return (
         <div className={styles.CardList}>
+            
+            {  moviesData &&
+                        
+                moviesData.map((movie) => (
+                <div className={styles.CardWrapper}>
+                    <CardItem btnDeleteVisibility={true} cardData={movie} key={movie.id} />
+                </div> 
 
-            <div className={styles.CardList__wrapper}>
-                {   moviesData &&
-
-                    moviesData.map((movie) => (
-
-                    <CardItem cardData={movie} key={movie.id} />
-
-                )) }
-            </div>
-
+            )) }
+                 
         </div>
 
     )

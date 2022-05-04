@@ -1,23 +1,22 @@
 .CardList {
-
-  &__wrapper {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 20px;
-    row-gap: 20px;
-    }
-
-  @media (max-width: 991px) {
-    &__wrapper {
-      grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 767px) {
-      &__wrapper {
-        grid-template-columns: repeat(1, 1fr);
-        }
-    }
+  display: flex;
+  flex-wrap: wrap;
 }
 
+
+.CardWrapper {
+  width: 25%;
+  padding: 10px;
+}
+
+@media (max-width: 991px) {
+  .CardWrapper {
+    width: 33%;
+  } 
+}
+@media (max-width: 767px) {
+  .CardWrapper {
+    width: 100%;
+  }
+}
 

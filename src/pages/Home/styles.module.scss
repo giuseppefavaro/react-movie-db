@@ -1,20 +1,5 @@
 .Home {
     padding: 20px;
-    
-
-    &__search {
-        padding: 40px 0;
-    }
-
-
-    &__search input {
-        width: 100%;
-        padding: 15px 10px;
-        border: 1px solid #ECEFF1;;
-    }
-
-    &__search label {
-        display: block;
-        margin-bottom: 10px;
-    }
+    max-width: 1400px;
+    margin: 0 auto;
 }
