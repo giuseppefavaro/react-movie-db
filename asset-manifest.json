@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "https://giuseppefavaro.github.io/react-movie-db/static/css/main.212a13ff.css",
-    "main.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/main.3dbcc204.js",
+    "main.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/main.0e8291d5.js",
     "home.css": "https://giuseppefavaro.github.io/react-movie-db/static/css/home.6d390bcd.chunk.css",
     "home.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/home.ca3c2379.chunk.js",
     "add.css": "https://giuseppefavaro.github.io/react-movie-db/static/css/add.ebce1177.chunk.css",
-    "add.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/add.7ecc69e1.chunk.js",
-    "edit.css": "https://giuseppefavaro.github.io/react-movie-db/static/css/edit.8e7ce4c7.chunk.css",
-    "edit.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/edit.6be8f25f.chunk.js",
+    "add.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/add.8b9918a6.chunk.js",
+    "edit.css": "https://giuseppefavaro.github.io/react-movie-db/static/css/edit.43f51bd9.chunk.css",
+    "edit.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/edit.e566781b.chunk.js",
     "static/js/105.c5a7b312.chunk.js": "https://giuseppefavaro.github.io/react-movie-db/static/js/105.c5a7b312.chunk.js",
     "index.html": "https://giuseppefavaro.github.io/react-movie-db/index.html",
     "main.212a13ff.css.map": "https://giuseppefavaro.github.io/react-movie-db/static/css/main.212a13ff.css.map",
-    "main.3dbcc204.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/main.3dbcc204.js.map",
+    "main.0e8291d5.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/main.0e8291d5.js.map",
     "home.6d390bcd.chunk.css.map": "https://giuseppefavaro.github.io/react-movie-db/static/css/home.6d390bcd.chunk.css.map",
     "home.ca3c2379.chunk.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/home.ca3c2379.chunk.js.map",
     "add.ebce1177.chunk.css.map": "https://giuseppefavaro.github.io/react-movie-db/static/css/add.ebce1177.chunk.css.map",
-    "add.7ecc69e1.chunk.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/add.7ecc69e1.chunk.js.map",
-    "edit.8e7ce4c7.chunk.css.map": "https://giuseppefavaro.github.io/react-movie-db/static/css/edit.8e7ce4c7.chunk.css.map",
-    "edit.6be8f25f.chunk.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/edit.6be8f25f.chunk.js.map",
+    "add.8b9918a6.chunk.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/add.8b9918a6.chunk.js.map",
+    "edit.43f51bd9.chunk.css.map": "https://giuseppefavaro.github.io/react-movie-db/static/css/edit.43f51bd9.chunk.css.map",
+    "edit.e566781b.chunk.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/edit.e566781b.chunk.js.map",
     "105.c5a7b312.chunk.js.map": "https://giuseppefavaro.github.io/react-movie-db/static/js/105.c5a7b312.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.212a13ff.css",
-    "static/js/main.3dbcc204.js"
+    "static/js/main.0e8291d5.js"
   ]
 }
