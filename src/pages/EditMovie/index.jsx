@@ -9,7 +9,7 @@ import styles from "./styles.module.scss";
 
 function EditMovie(props) {
 
-  //console.log(editCallback);
+  //console.log(props);
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -18,20 +18,18 @@ function EditMovie(props) {
 
   useEffect(() => {
     GET(movieId).then((data) => setMovieData(data));
-  }, [movieId]);
+
+    // eslint-disable-next-line
+  }, []);
 
 
-  const submitComplete = () => {
-    // console.log("ok modificato ");
+  const completeCallback = () => {
+    // console.log("ok, modificato");
 
-    props.editSuccess({
-      visible: true,
-      content: "You have successfully edited the movie",
-      color: "alertColorGreen",
-    })
+    props.editSuccess();
   
     navigate("/");
-};
+  };
 
 
 
@@ -41,7 +39,7 @@ function EditMovie(props) {
         <CardItem cardData={movieData} btnDeleteVisibility={false} />
       </div>
       <div className={styles.EditMovie__right}>
-        <CreateCardForm completeCallback={submitComplete} btnDeleteVisibility={false} text="Edit movie" />
+        <CreateCardForm completeCallback={completeCallback} btnDeleteVisibility={false} text="Edit movie" movieData={movieData} />
       </div>
     </div>
   );

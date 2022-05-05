@@ -1,16 +1,12 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { POST, PUT } from "../../utils"
-
 import styles from "./styles.module.scss"
 
 
 
-
-const CreateCardForm = ({setModalVisibility, callType, completeCallback, text}) => {
-
+const CreateCardForm = ({setModalVisibility, callType, completeCallback, text, movieData}) => {
 
 
     const [title, setTitle] = useState("");
@@ -19,8 +15,27 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback, text}) 
     const [genres, setGenres] = useState("");
     const [description, setDescription] = useState("");
 
-    const genresInArr = (genres) => genres.split(",");
+    
+    useEffect(() => {
+      if (movieData) {
+        setTitle(movieData.title);
+        setYear(movieData.year);
+        setPoster(movieData.poster);
+        setGenres(movieData.genres);
+        setDescription(movieData.description);
+      }
+    }, [movieData]);
+    
 
+    const genresInArr = (genres) => {
+      // from edit page
+      if (Array.isArray(genres)) {
+          return genres;
+      } else { 
+        return genres.split(",");
+       }
+    }
+    
 
     const location = useLocation();
     const movieId = location.pathname.split("/").reverse()[0];
@@ -54,10 +69,8 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback, text}) 
             description,
           });
 
-
           completeCallback();
-
-          
+  
         }
 
     }

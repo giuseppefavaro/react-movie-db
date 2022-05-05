@@ -17,13 +17,8 @@ const AddMovie = (props) => {
 
 
     const submitComplete = () => {
-        // console.log("ok submit ");
 
-        props.editSuccess({
-            visible: true,
-            content: "You have added a new movie!",
-            color: "alertColorBlue",
-        })
+        props.addSuccess()
         
         navigate("/");
     };

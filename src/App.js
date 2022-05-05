@@ -21,8 +21,34 @@ function App() {
     color: ""
   })
 
-  const editSuccess = (value) => {
-    setAlert(value);
+  const editSuccess = () => {
+    setAlert(
+      {
+        visible: true,
+        content: "You have successfully edited the movie",
+        color: "alertColorGreen",
+      }
+    );
+  };
+
+  const addSuccess = () => {
+    setAlert(
+      {
+        visible: true,
+        content: "You have added a new movie!",
+        color: "alertColorBlue",
+      }
+    );
+  };
+
+  const deleteSuccess = () => {
+    setAlert(
+      {
+        visible: true,
+        content: "You have rimosso il movie!",
+        color: "alertColorBlue",
+      }
+    );
   };
 
 
@@ -48,7 +74,7 @@ function App() {
             path="/edit-movie/:id"
             element={
               <Suspense fallback={<Loading />}>
-                <EditMovie editSuccess={editSuccess} />
+                <EditMovie deleteSuccess={deleteSuccess} editSuccess={editSuccess} />
               </Suspense>
             }
           />
@@ -57,7 +83,7 @@ function App() {
             path="/add-movie"
             element={
               <Suspense fallback={<Loading />}>
-                <AddMovie editSuccess={editSuccess} />
+                <AddMovie addSuccess={addSuccess} />
               </Suspense>
             }
           />
