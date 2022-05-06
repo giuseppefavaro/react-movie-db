@@ -53,8 +53,10 @@ const CardList = ({filter}) => {
             {  moviesData &&
                         
                 moviesData.map((movie) => (
-                
-                    <CardItem btnDeleteVisibility={true} cardData={movie} key={movie.id} />
+
+                    <div className={styles.CardWrapper} key={movie.id}>
+                        <CardItem btnDeleteVisibility={true} cardData={movie} />
+                    </div>
 
             )) }
                  

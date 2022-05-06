@@ -36,10 +36,10 @@ function EditMovie(props) {
   return (
     <div className={styles.EditMovie}>
       <div className={styles.EditMovie__left}>
-        <CardItem cardData={movieData} btnDeleteVisibility={false} />
+        <CardItem cardData={movieData} btnDeleteHidden={true} />
       </div>
       <div className={styles.EditMovie__right}>
-        <CreateCardForm completeCallback={completeCallback} btnDeleteVisibility={false} text="Edit movie" movieData={movieData} />
+        <CreateCardForm completeCallback={completeCallback} text="Edit movie" movieData={movieData} />
       </div>
     </div>
   );
