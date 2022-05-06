@@ -12,10 +12,13 @@ const Header = () => {
             <nav className={styles.Header__menu}>
                 <ul>
                     <li>
-                    <Link to="/">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                    <Link to="/add-movie">Add movie</Link>
+                        <Link to="/add-movie">Add movie</Link>
+                    </li>
+                    <li>
+                        <Link to="/category-movie">Category</Link>
                     </li>
                 </ul>
             </nav>

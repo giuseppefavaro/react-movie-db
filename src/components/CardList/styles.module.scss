@@ -2,21 +2,3 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-
-.CardWrapper {
-  width: 25%;
-  padding: 10px;
-}
-
-@media (max-width: 991px) {
-  .CardWrapper {
-    width: 33%;
-  } 
-}
-@media (max-width: 767px) {
-  .CardWrapper {
-    width: 100%;
-  }
-}
-

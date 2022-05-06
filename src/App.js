@@ -11,7 +11,7 @@ import './App.css';
 const Home = lazy(() => import(/* webpackChunkName: "home" */ "./pages/Home"));
 const AddMovie = lazy(() => import(/* webpackChunkName: "add" */ "./pages/AddMovie"));
 const EditMovie = lazy(() => import(/* webpackChunkName: "edit" */ "./pages/EditMovie"));
-
+const CategoryMovie = lazy(() => import(/* webpackChunkName: "category" */ "./pages/CategoryMovie"));
 
 function App() {
 
@@ -41,16 +41,6 @@ function App() {
     );
   };
 
-  const deleteSuccess = () => {
-    setAlert(
-      {
-        visible: true,
-        content: "You have rimosso il movie!",
-        color: "alertColorBlue",
-      }
-    );
-  };
-
 
   const hideAlert = () => {
     setAlert ({
@@ -74,7 +64,7 @@ function App() {
             path="/edit-movie/:id"
             element={
               <Suspense fallback={<Loading />}>
-                <EditMovie deleteSuccess={deleteSuccess} editSuccess={editSuccess} />
+                <EditMovie editSuccess={editSuccess} />
               </Suspense>
             }
           />
@@ -84,6 +74,15 @@ function App() {
             element={
               <Suspense fallback={<Loading />}>
                 <AddMovie addSuccess={addSuccess} />
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="/category-movie"
+            element={
+              <Suspense fallback={<Loading />}>
+                <CategoryMovie />
               </Suspense>
             }
           />
