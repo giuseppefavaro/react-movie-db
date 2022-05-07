@@ -1,16 +1,18 @@
 
 import { Link } from "react-router-dom";
-import { DELETE } from "../../utils";
+// import { DELETE } from "../../utils";
 
 import styles from "./styles.module.scss";
 
 
-const CardItem = ({ cardData, btnDeleteHidden  }) => {
+const CardItem = ({ cardData, btnDeleteHidden, idCardInCardList  }) => {
 
 
-    const onCardDelete = () => {
-        DELETE(cardData.id).then( (data) => window.location.reload("/"));
-    }
+    // const onCardDelete = () => {
+    //     DELETE(cardData.id).then( (data) => window.location.reload("/"));
+    // }
+
+
 
     return (
         
@@ -29,7 +31,7 @@ const CardItem = ({ cardData, btnDeleteHidden  }) => {
                     ))}
                 </ul>
 
-                { btnDeleteHidden ? "" : <button onClick={onCardDelete} className={styles.CardItem__btn}></button>}
+                { btnDeleteHidden ? "" : <button onClick={ () => idCardInCardList(cardData.id) } className={styles.CardItem__btn}></button>}
             </div>
         </article>
       );

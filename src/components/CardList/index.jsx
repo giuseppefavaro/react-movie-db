@@ -10,7 +10,13 @@ import styles from "./styles.module.scss"
 // GET().then((resultData) => console.log(resultData) );
 
 
-const CardList = ({filter}) => {
+const CardList = ({filter, idCardInHome}) => {
+
+    const idCardInCardList = (id) => {
+       //  console.log("Id in CardList", idCard);
+        idCardInHome(id);
+    }
+
 
     const [moviesData, setMoviesData] = useState([]);
     const [moviesDataFiltered, setMoviesDataFiltered] = useState([]);
@@ -55,7 +61,7 @@ const CardList = ({filter}) => {
                 moviesData.map((movie) => (
 
                     <div className={styles.CardWrapper} key={movie.id}>
-                        <CardItem btnDeleteVisibility={true} cardData={movie} />
+                        <CardItem idCardInCardList={idCardInCardList} btnDeleteVisibility={true} cardData={movie} />
                     </div>
 
             )) }

@@ -1,0 +1,56 @@
+.ModalConfirmDelete {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+
+    &__wrapper {
+        position: fixed;
+        z-index: 2;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        padding: 100px 40px;
+        width: 50%;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 8px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    &__content p {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    &__content button {
+        border: none;
+        padding: 14px 22px;
+        margin: 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        background: #546E7A;
+    }
+    &__btnRed {
+        background: #D32F2F !important;
+        color: #fff;
+    }
+
+}
+
+

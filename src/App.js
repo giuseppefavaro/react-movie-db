@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Alert from "./components/Alert";
 import Loading from "./components/Loading";
+import ModalConfirmDelete from "./components/ModalConfirmDelete";
 
 
 import './App.css';
@@ -20,6 +21,14 @@ function App() {
     content: "",
     color: ""
   })
+
+  const hideAlert = () => {
+    setAlert ({
+      visible: false,
+      content: "",
+      color: ""
+    })
+  }
 
   const editSuccess = () => {
     setAlert(
@@ -42,13 +51,18 @@ function App() {
   };
 
 
-  const hideAlert = () => {
-    setAlert ({
-      visible: false,
-      content: "",
-      color: ""
-    })
+  const [idCard, setidCard] = useState("");
+  const [showModalDelete, setModalDelete] = useState(false);
+
+  const idCardInApp = (id) => {
+    setidCard(id);
+    setModalDelete(true); 
+  } 
+
+  const closeModalConfirmDelete = () => {
+    setModalDelete(false);
   }
+
 
 
   return (
@@ -57,6 +71,8 @@ function App() {
         <Header />
 
         <Alert content={alert.content} visible={alert.visible} color={alert.color} timeoutCallback={hideAlert} timeout="4000" />
+
+        <ModalConfirmDelete closeModalConfirmDelete={closeModalConfirmDelete} showModalDelete={showModalDelete} idCard={idCard} />
 
         <Routes>
 
@@ -91,7 +107,7 @@ function App() {
             path="/"
             element={
               <Suspense fallback={<Loading />}>
-                <Home />
+                <Home idCardInApp={idCardInApp} />
               </Suspense>
             }
           />

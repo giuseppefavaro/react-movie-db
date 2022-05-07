@@ -5,8 +5,8 @@ import { POST, PUT } from "../../utils"
 import styles from "./styles.module.scss"
 
 
-
-const CreateCardForm = ({setModalVisibility, callType, completeCallback, text, movieData}) => {
+/* const CreateCardForm = ({setModalVisibility, callType, completeCallback, text, movieData}) => { */
+const CreateCardForm = ({callType, completeCallback, text, movieData}) => {
 
 
     const [title, setTitle] = useState("");
@@ -54,7 +54,7 @@ const CreateCardForm = ({setModalVisibility, callType, completeCallback, text, m
             description,
           });
           
-          setModalVisibility(true);
+          /* setModalVisibility(true); */
 
           completeCallback();
 
