@@ -88,23 +88,23 @@ const CreateCardForm = ({callType, completeCallback, text, movieData}) => {
 
             <div className={styles.CreateCardForm__form__input}>
               <label htmlFor="title">Title:</label>
-              <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" required />
+              <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" placeholder="Title of the movie" required />
             </div>
             <div className={styles.CreateCardForm__form__input}>
               <label htmlFor="year">Year:</label>
-              <input value={year} onChange={(e) => setYear(e.target.value)} type="text" id="year" name="year" required />
+              <input value={year} onChange={(e) => setYear(e.target.value)} type="text" id="year" name="year" placeholder="Year of the movie" required />
             </div>
             <div className={styles.CreateCardForm__form__input}>
               <label htmlFor="poster">Poster:</label>
-              <input value={poster} onChange={(e) => setPoster(e.target.value)} type="text" id="poster" name="poster" required />
+              <input value={poster} onChange={(e) => setPoster(e.target.value)} type="text" id="poster" name="poster" placeholder="https://picsum.photos/200/300" required />
             </div>
             <div className={styles.CreateCardForm__form__input}>
               <label htmlFor="genres">Genres:</label>
-              <input value={genres} onChange={(e) => setGenres(e.target.value)} type="text" id="genres" name="genres" required />
+              <input value={genres} onChange={(e) => setGenres(e.target.value)} type="text" id="genres" name="genres" placeholder="action, comedy, dramatic" required />
             </div>
             <div className={styles.CreateCardForm__form__textarea}>
               <label htmlFor="description">Description:</label>
-              <textarea value={description} onChange={(e) => setDescription(e.target.value)} id="description" name="description" required></textarea>
+              <textarea value={description} onChange={(e) => setDescription(e.target.value)} id="description" name="description" placeholder="Description of the movie" required></textarea>
             </div>
             <div className={styles.CreateCardForm__form__btn}>
               <input type="submit" value={text} />
